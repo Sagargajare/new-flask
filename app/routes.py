@@ -102,6 +102,10 @@ def upload_request_images(content, subdir):
     content.save(file_path)
     return file_path
 
+@app.route('/test', methods=['GET','POST'])
+def homepage():
+    
+    return jsonify({'result': 'Working'})
 # -------------------------------------
 # Another way to run:
 # -------------------------------------
