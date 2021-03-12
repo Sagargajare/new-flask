@@ -31,11 +31,12 @@ from app import app
 # -------------------------------------
 # Routes
 # -------------------------------------
-from app import app_utils
-from app import api_bridge
-from app import constants
-from app import mrz_parser
-setting_err = app_utils.load_settings(app, 'localhost')
+from app.app_utils import load_settings
+from app.api_bridge import scan_mrz
+from app.constants import api_ver
+from app.mrz_parser import mrzParser
+
+setting_err = load_settings(app, 'localhost')
 if setting_err:
     logging.error(setting_err)
     sys.exit()
@@ -55,7 +56,7 @@ def add_headers(response):
 
 @app.route('/')
 def homepage():
-    api_detail = "Document scanner api: Version " + constants.api_ver
+    api_detail = "Document scanner api: Version " + api_ver
     return api_detail
 
 @app.route('/document-scanner', methods=['GET','POST'])
@@ -73,9 +74,9 @@ def document_scanner():
     w = img.shape[1]
     h = img.shape[0]
 
-    scan_result = api_bridge.scan_mrz(img, w, h)
+    scan_result = scan_mrz(img, w, h)
 
-    parser = mrz_parser.mrzParser(str(scan_result.decode('utf-8')))
+    parser = mrzParser(str(scan_result.decode('utf-8')))
     parser.process()
 
     ret = jsonify({ 'passportType': parser.passportType,
