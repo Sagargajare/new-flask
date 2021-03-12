@@ -23,8 +23,10 @@ from . import app_utils
 
 # import api_bridge
 # import app_utils
-import constants
-import mrz_parser
+from . import constants
+from . import mrz_parser
+# import constants
+# import mrz_parser
 
 """ The flask app for serving predictions """
 app = Flask(__name__, static_folder='')
