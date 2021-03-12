@@ -18,13 +18,13 @@ import logging
 import sys
 import uuid
 
-from . import app_utils
-from . import app_utils
+# from . import app_utils
+# from . import app_utils
 
 # import api_bridge
 # import app_utils
-from . import constants
-from . import mrz_parser
+# from . import constants
+# from . import mrz_parser
 # from . import api_ver
 # import mrz_parser
 from app import app
@@ -32,7 +32,8 @@ from app import app
 # Routes
 # -------------------------------------
 from app import app_utils
-from app import app_utils
+from app import constants
+from app import mrz_parser
 setting_err = app_utils.load_settings(app, 'localhost')
 if setting_err:
     logging.error(setting_err)
@@ -53,7 +54,7 @@ def add_headers(response):
 
 @app.route('/')
 def homepage():
-    api_detail = "Document scanner api: Version " + api_ver
+    api_detail = "Document scanner api: Version " + constants.api_ver
     return api_detail
 
 @app.route('/document-scanner', methods=['GET','POST'])

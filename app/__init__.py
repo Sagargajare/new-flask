@@ -24,5 +24,3 @@ app = Flask(__name__, static_folder='')
 
 from app import app
 
-from app import constants
-from app import mrz_parser
