@@ -27,17 +27,7 @@ from . import constants
 from . import mrz_parser
 # from . import api_ver
 # import mrz_parser
-
-""" The flask app for serving predictions """
-app = Flask(__name__, static_folder='')
-
-#setting_err = app_utils.load_settings(app)
-setting_err = app_utils.load_settings(app, 'localhost')
-
-if setting_err:
-    logging.error(setting_err)
-    sys.exit()
-
+from app import app
 # -------------------------------------
 # Routes
 # -------------------------------------
