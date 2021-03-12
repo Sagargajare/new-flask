@@ -25,7 +25,7 @@ from . import app_utils
 # import app_utils
 from . import constants
 from . import mrz_parser
-# import constants
+# from . import api_ver
 # import mrz_parser
 
 """ The flask app for serving predictions """
@@ -58,7 +58,7 @@ def add_headers(response):
 
 @app.route('/')
 def homepage():
-    api_detail = "Document scanner api: Version " + constants.api_ver
+    api_detail = "Document scanner api: Version " + api_ver
     return api_detail
 
 @app.route('/document-scanner', methods=['GET','POST'])
