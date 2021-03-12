@@ -18,8 +18,11 @@ import logging
 import sys
 import uuid
 
-import api_bridge
-import app_utils
+from . import app_utils
+from . import app_utils
+
+# import api_bridge
+# import app_utils
 import constants
 import mrz_parser
 
