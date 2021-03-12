@@ -23,11 +23,6 @@ app = Flask(__name__, static_folder='')
 
 
 from app import app
-from app import app_utils
-from app import app_utils
-setting_err = app_utils.load_settings(app, 'localhost')
-if setting_err:
-    logging.error(setting_err)
-    sys.exit()
+
 from app import constants
 from app import mrz_parser

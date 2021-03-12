@@ -31,7 +31,12 @@ from app import app
 # -------------------------------------
 # Routes
 # -------------------------------------
-
+from app import app_utils
+from app import app_utils
+setting_err = app_utils.load_settings(app, 'localhost')
+if setting_err:
+    logging.error(setting_err)
+    sys.exit()
 # force browser to hold no cache. Otherwise old result might return.
 @app.after_request
 def set_response_headers(response):
