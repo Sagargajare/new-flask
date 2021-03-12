@@ -10,13 +10,7 @@ import logging
 import sys
 import uuid
 
-from app import app_utils
-from app import app_utils
 
-# import api_bridge
-# import app_utils
-from app import constants
-from app import mrz_parser
 # from . import api_ver
 # import mrz_parser
 
@@ -31,3 +25,10 @@ if setting_err:
     sys.exit()
 
 from app import app
+from app import app_utils
+from app import app_utils
+
+# import api_bridge
+# import app_utils
+from app import constants
+from app import mrz_parser
