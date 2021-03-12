@@ -32,6 +32,7 @@ from app import app
 # Routes
 # -------------------------------------
 from app import app_utils
+from app import api_bridge
 from app import constants
 from app import mrz_parser
 setting_err = app_utils.load_settings(app, 'localhost')
