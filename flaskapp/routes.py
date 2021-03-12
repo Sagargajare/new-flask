@@ -27,14 +27,14 @@ import uuid
 # from . import mrz_parser
 # from . import api_ver
 # import mrz_parser
-from app import app
+from flaskapp import app
 # -------------------------------------
 # Routes
 # -------------------------------------
-from app.app_utils import load_settings
-from app.api_bridge import scan_mrz
-from app.constants import api_ver
-from app.mrz_parser import mrzParser
+from flaskapp.app_utils import load_settings
+from flaskapp.api_bridge import scan_mrz
+from flaskapp.constants import api_ver
+from flaskapp.mrz_parser import mrzParser
 
 setting_err = load_settings(app, 'localhost')
 if setting_err:
