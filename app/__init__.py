@@ -19,7 +19,7 @@ app = Flask(__name__, static_folder='')
 
 #setting_err = app_utils.load_settings(app)
 
-
+from app import routes
 
 
 # from app import app
