@@ -103,7 +103,7 @@ def upload_request_images(content, subdir):
     return file_path
 
 @app.route('/test', methods=['GET','POST'])
-def homepage():
+def test():
     
     return jsonify({'result': 'Working'})
 # -------------------------------------
